@@ -1,0 +1,12 @@
+/Users/sveta/RiderProjects/dailyTasks/dailyTasks/bin/Debug/netcoreapp3.1/dailyTasks.deps.json
+/Users/sveta/RiderProjects/dailyTasks/dailyTasks/bin/Debug/netcoreapp3.1/dailyTasks.runtimeconfig.json
+/Users/sveta/RiderProjects/dailyTasks/dailyTasks/bin/Debug/netcoreapp3.1/dailyTasks.runtimeconfig.dev.json
+/Users/sveta/RiderProjects/dailyTasks/dailyTasks/bin/Debug/netcoreapp3.1/dailyTasks.dll
+/Users/sveta/RiderProjects/dailyTasks/dailyTasks/bin/Debug/netcoreapp3.1/dailyTasks.pdb
+/Users/sveta/RiderProjects/dailyTasks/dailyTasks/obj/Debug/netcoreapp3.1/dailyTasks.csprojAssemblyReference.cache
+/Users/sveta/RiderProjects/dailyTasks/dailyTasks/obj/Debug/netcoreapp3.1/dailyTasks.csproj.CoreCompileInputs.cache
+/Users/sveta/RiderProjects/dailyTasks/dailyTasks/obj/Debug/netcoreapp3.1/dailyTasks.AssemblyInfoInputs.cache
+/Users/sveta/RiderProjects/dailyTasks/dailyTasks/obj/Debug/netcoreapp3.1/dailyTasks.AssemblyInfo.cs
+/Users/sveta/RiderProjects/dailyTasks/dailyTasks/obj/Debug/netcoreapp3.1/dailyTasks.dll
+/Users/sveta/RiderProjects/dailyTasks/dailyTasks/obj/Debug/netcoreapp3.1/dailyTasks.pdb
+/Users/sveta/RiderProjects/dailyTasks/dailyTasks/obj/Debug/netcoreapp3.1/dailyTasks.genruntimeconfig.cache
