@@ -6,11 +6,11 @@ namespace dailyTasks
 {
     
     //#2
-    public class Queue<T>
+    public class MyQueue<T>
     {
         private LinkedList<T> queue;
 
-        public Queue()
+        public MyQueue()
         {
             queue = new LinkedList<T>();
         }

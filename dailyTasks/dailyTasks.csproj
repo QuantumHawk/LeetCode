@@ -9,6 +9,8 @@
     <ItemGroup>
       <Compile Remove="DoubleLinkedList.cs" />
       <Compile Remove="Matrix.cs" />
+      <Compile Remove="test.cs" />
+      <Compile Remove="ExtensionMethods.cs" />
     </ItemGroup>
 
     <ItemGroup>

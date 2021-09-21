@@ -29,6 +29,7 @@ namespace LL
                 Data = data;
                 Next = next;
             }
+            
 
             public T getData()
             {

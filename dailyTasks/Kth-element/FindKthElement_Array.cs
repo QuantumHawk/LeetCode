@@ -1,8 +1,11 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace dailyTasks.LinkedList
 {
     /**
+     * https://www.programmerinterview.com/data-structures/find-nth-to-last-element-in-a-linked-list/
  * Quick selection problem: find Kth element in array.
  */
 
@@ -27,8 +30,16 @@ namespace dailyTasks.LinkedList
 // https://github.com/Semaserg/LeetCodeProblems/blob/master/sorting/QuickSort/QuickSelection.java
     public class QuickSelection
     {
-        public int findKthLargest(int[] nums, int k)
+        public static int findKthLargest(int[] nums, int k)
         {
+            int i = 0;
+            var ttt = new List<int>() {1, 2, 3};
+            var s = ttt.Select(_ => i++).First();
+
+            var d = new Dictionary<object,object>();
+            d.Add(new object(), new object());
+            d.Add(new object(), new object());
+            var t =d[new object()];
             int start = 0, end = nums.Length - 1, index = nums.Length - k;
             while (start < end)
             {
@@ -41,7 +52,7 @@ namespace dailyTasks.LinkedList
             return nums[start];
         }
 
-        private int partion(int[] nums, int start, int end)
+        private static int partion(int[] nums, int start, int end)
         {
             int pivot = start, temp;
             while (start <= end)
@@ -59,5 +70,17 @@ namespace dailyTasks.LinkedList
             nums[pivot] = temp;
             return end;
         }
+
+        // public static void Main(string[] args)
+        // {
+        //     int[] A = {5,7,2,3,1,6};
+        //     int N = 3;
+        //     int res = findKthLargest(A, N);
+        //     //int m = 4;
+        //     // Console.WriteLine("Input  : " + String.Join(",", A));
+        //     // Console.WriteLine("Result : " + String.Join(",", B));
+        //     Console.ReadKey();
+        //
+        // }
     }
 }

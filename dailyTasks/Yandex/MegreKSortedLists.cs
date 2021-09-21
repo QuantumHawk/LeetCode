@@ -1,3 +1,5 @@
+using System;
+
 namespace dailyTasks.LinkedList
 {
     
@@ -24,14 +26,73 @@ However, the key point here is the node returned by queue.poll() will still have
 if (tail.next!=null)
 queue.add(tail.next);
 */
+  public  class Merge_Recursivly {
+      
+      //public int prev = 0;
 
-    public class MegreKSortedLists
+        // recursive merge
+        private  ListNode mergeSortedLists(ListNode list1, ListNode list2)
+        {
+            if (list1 == null)
+                return list2;
+            if (list2 == null)
+                return list1;
+
+            if (list1.next!=null && list1.val == list1.next.val)
+            {
+                list1.next = list1.next.next;
+                mergeSortedLists(list1, list2);
+            }
+            if (list2.next !=null && list2.val == list2.next.val)
+            {
+                list2.next = list2.next.next;
+                mergeSortedLists(list1, list2);
+            }
+            
+            if (list1.val == list2.val)
+            {
+                mergeSortedLists(list1.next, list2);
+                return list2;
+
+            }
+            if (list1.val < list2.val) 
+            {
+                list1.next = mergeSortedLists(list1.next, list2);
+                return list1;
+            } else 
+            {
+                list2.next = mergeSortedLists(list2.next, list1);
+                return list2;
+            }
+        }
+
+        public ListNode mergeKLists(ListNode[] lists, int start, int end) {
+
+            // base cases
+            if (start > end)
+                return null;
+            if (start == end)
+                return lists[start];
+
+            // divide and conquer
+            int middle = (end + start) / 2;
+            ListNode leftList = mergeKLists(lists, start, middle);
+            ListNode rightList = mergeKLists(lists, middle + 1, end);
+            return mergeSortedLists(leftList, rightList);
+        }
+
+        public ListNode mergeKLists(ListNode[] lists) {
+            return mergeKLists(lists, 0, lists.Length - 1);
+        }
+    }
+
+    public static class MegreKSortedLists
     {
         // No priority Queue solution
         // n - lists array length, s - max linked list size
         // Time complexity O(n^2*s), space O(n)
         // Time limit exceeded in leetcode => need to use Heap.
-        public ListNode mergeKLists1(ListNode[] lists) {
+        public static ListNode mergeKLists1(ListNode[] lists) {
             ListNode fakeHead = new ListNode(0);
             ListNode head = fakeHead;
             bool hasNext = lists.Length != 0;
@@ -41,7 +102,9 @@ queue.add(tail.next);
                 ListNode minNode = lists[0];
                 for (int i=0; i<lists.Length; i++) {
                     if (lists[i] != null) {
-                        if (minNode == null || lists[i].val < minNode.val) {
+                        if (minNode == null 
+                            || (lists[i].val < minNode.val 
+                            && lists[i].val!= minNode.val)) {
                             minNode = lists[i];
                             currIndex = i;
                         }
@@ -61,54 +124,60 @@ queue.add(tail.next);
         // n - lists array length, k - total node count
         //PriorityQueue is a MinHeap
         // Time complexity O(k*log n), space O(n)
-        /*public ListNode mergeKLists(ListNode[] lists) {
+        public static ListNode mergeKLists(ListNode[] lists) {
             ListNode fakeHead = new ListNode(0);
             ListNode head = fakeHead;
             //lambda for comparing ListNode elements
             PriorityQueue<ListNode> heap = new PriorityQueue<ListNode>((a,b) => a.val - b.val);
             foreach(ListNode node in lists) {
-                if (node != null) heap.add(node);
+                if (node != null) heap.Enqueue(node);
             }
-            while (!heap.IsEmpty()) {
-                ListNode current = heap.poll();
+            while (heap.Count()>0) { //!heap.IsEmpty
+                ListNode current = heap.Dequeue();
                 head.next = current;
                 head = head.next;
-
+        
                 if (current.next != null) {
-                    heap.add(current.next);
+                    heap.Enqueue(current.next);
                 }
             }
             return fakeHead.next;
-        }*/
-    }
-
-    /*public class Main
-    {
-        public static void main(String[] args)
-        {
-            ListNode a = new ListNode(1);
-            ListNode b = new ListNode(5);
-            ListNode c = new ListNode(10);
-            a.next = b;
-            b.next = c;
-
-            ListNode a1 = new ListNode(2);
-            ListNode b1 = new ListNode(3);
-            ListNode c1 = new ListNode(11);
-            a1.next = b1;
-            b1.next = c1;
-
-            ListNode a2 = new ListNode(6);
-            ListNode b2 = new ListNode(7);
-            ListNode c2 = new ListNode(20);
-            a2.next = b2;
-            b2.next = c2;
-
-            Solution s = new Solution();
-            ListNode res = s.mergeKLists(new ListNode[] {a, a1, a2});
-            System.out.print(res);
         }
-    }*/
+
+
+        // public static void Main(string[] args)
+        // {
+        //     ListNode a = new ListNode(0);
+        //     ListNode b = new ListNode(0);
+        //     ListNode c = new ListNode(0);
+        //     ListNode d = new ListNode(10);
+        //     ListNode e = new ListNode(10);
+        //     a.next = b;
+        //     b.next = c;
+        //     c.next = d;
+        //     d.next = e;
+        //
+        //     ListNode a1 = new ListNode(0);
+        //     ListNode b1 = new ListNode(10);
+        //     ListNode c1 = new ListNode(11);
+        //     a1.next = b1;
+        //     b1.next = c1;
+        //
+        //     ListNode a2 = new ListNode(6);
+        //     //ListNode b2 = new ListNode(7);
+        //     //ListNode c2 = new ListNode(20);
+        //     //a2.next = b2;
+        //     //b2.next = c2;
+        //
+        //     ListNode[] array = new[] {a, a1, a2};
+        //     //ListNode res = mergeKLists1(new ListNode[] {a, a1, a2});
+        //     var merge = new Merge_Recursivly();
+        //     //merge.prev = a.val;
+        //     var res = merge.mergeKLists(array);
+        //     Console.ReadKey();
+        //     //Console.WriteLine(res);
+        // }
+    }
 }
 
 /*class Solution {

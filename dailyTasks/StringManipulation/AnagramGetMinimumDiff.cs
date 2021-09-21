@@ -31,6 +31,19 @@ namespace dailyTasks.StringManipulation
             
             return count; 
         } 
+        
+        public static bool areAnagrams(String first, String second) {
+            if (first.Length != second.Length) return false;
+            int[] frequencies = new int[26];
+            for (int i = 0; i < first.Length; i++) {
+                frequencies[first[i]-'a']++;
+            }
+            for (int i = 0; i < second.Length; i++) {
+                if (frequencies[second[i]-'a'] == 0) return false;
+                frequencies[second[i]-'a']--;
+            }
+            return true;
+        }
         public static List<int> getMinimumDifference(List<string> a, List<string> b)
         {
             for(int i=0; i< a.Count; i++)
@@ -40,13 +53,14 @@ namespace dailyTasks.StringManipulation
             }
             return new List<int>();
         }
-        /*public static void Main(string[] args)
-        {
-            List<string> a = new List<string>(){"dfd","a"};
-            List<string> b = new List<string>(){"fd","bb"};
-
-            getMinimumDifference(a, b);
-            Console.ReadLine();
-        }*/
+        // public static void Main(string[] args)
+        // {
+        //     areAnagrams("basebol", "loseabb");
+        //     List<string> a = new List<string>(){"dfd","a"};
+        //     List<string> b = new List<string>(){"fd","bb"};
+        //
+        //     getMinimumDifference(a, b);
+        //     Console.ReadLine();
+        // }
     }
 }

@@ -99,7 +99,7 @@ namespace dailyTasks
         //https://algorithms.tutorialhorizon.com/minimum-boats-required-to-rescue-people/
         public static int getNumberOfBoats(List<int> dwarfs, int limit) {
 
-            int[] array = new int[dwarfs.Count];
+            int[] array = new int[dwarfs.Count];  
             //dwarfs.Sort();
             //dwarfs.Reverse();
             dwarfs.Sort((a, b) => b.CompareTo(a));
@@ -115,11 +115,11 @@ namespace dailyTasks
             if (wt[next] == limit || (wt[next] + wt[last]) > limit) {
                 result++;
                 return numberOfBoats(limit, wt, next+1, last);
-            } else if (((wt[next] + wt[last]) == limit) || (wt[next] + wt[last]) < limit) {
-                result++;
-                return numberOfBoats(limit, wt, next+1, last-1);
             }
-            return result;
+
+            if (((wt[next] + wt[last]) != limit) && (wt[next] + wt[last]) >= limit) return result;
+            result++;
+            return numberOfBoats(limit, wt, next+1, last-1);
         }
     }
 

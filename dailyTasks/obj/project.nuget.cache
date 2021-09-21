@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "6U28qZu+oJLXBvPZVq5sShCgzDALmVS7Wm8f5euduVFGiEZCUVEaeoWc2Ip6UcKPNdMlQVgUwnoVEtJmG0vKqQ==",
+  "dgSpecHash": "IRami80fGbSiyenw9cq0+R0ZI8f8YrF/KAIphvX33q+qc7tS24xNQKOrw3zA6jsr0FeJ/SKh+lJzqz6ytfh0qA==",
   "success": true,
   "projectFilePath": "/Users/sveta/RiderProjects/dailyTasks/dailyTasks/dailyTasks.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/Users/sveta/.nuget/packages/microsoft.aspnetcore.app.ref/3.1.10/microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512"
+  ],
   "logs": []
 }

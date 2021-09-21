@@ -14,4 +14,9 @@ namespace dailyTasks.Tree
             return "ROOT: " + val + " LEFT: " + leftStr + " RIGHT: " + rightStr;
         }
     }
+
+    public class Input
+    {
+        
+    }
 }

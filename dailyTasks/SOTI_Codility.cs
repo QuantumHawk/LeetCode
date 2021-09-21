@@ -1,20 +1,10 @@
+using System.Collections.Generic;
+
 namespace dailyTasks
 {
     public class SOTI_Codility
     {
-        /*Example test:   (3, [1, 2, 3, 3, 1, 3, 1])
-Output (stderr):
-
-    Unhandled Exception:
-System.IndexOutOfRangeException: Array index is out of range.
-    at Solution.solution (Int32 M, System.Int32[] A) [0x00000] in <filename unknown>:0 
-at SolutionWrapper.run (System.String input, System.String output) [0x00000] in <filename unknown>:0 
-at SolutionWrapper.Main (System.String[] args) [0x00000] in <filename unknown>:0 
-[ERROR] FATAL UNHANDLED EXCEPTION: System.IndexOutOfRangeException: Array index is out of range.
-    at Solution.solution (Int32 M, System.Int32[] A) [0x00000] in <filename unknown>:0 
-at SolutionWrapper.run (System.String input, System.String output) [0x00000] in <filename unknown>:0 
-at SolutionWrapper.Main (System.String[] args) [0x00000] in <filename unknown>:0 
-RUNTIME ERROR (tested program terminated with exit code 1)*/
+        /*Example test:   (3, [1, 2, 3, 3, 1, 3, 1])*/
         public static int solution_works(int M, int[] A)
         {
             int N = A.Length;
@@ -74,11 +64,10 @@ RUNTIME ERROR (tested program terminated with exit code 1)*/
         {
             var A = new int[] {5,5,1,7,2,3,5};
             int m = 4;
-            
-            
-            Console.WriteLine("Input  : " + String.Join(",", A));
+
+            //Console.WriteLine("Input  : " + String.Join(",", A));
            // Console.WriteLine("Result : " + String.Join(",", B));
-            Console.ReadLine();
+           // Console.ReadLine();
 
 
         }*/

@@ -13,7 +13,7 @@ namespace dailyTasks.LinkedList
 			this.data = new List<T>();
 		}
 
-		public PriorityQueue(Func<ListNode, ListNode> func)
+		public PriorityQueue(Comparison<ListNode> comparer)
 		{
 			throw new NotImplementedException();
 		}
