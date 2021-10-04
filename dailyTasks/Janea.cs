@@ -56,6 +56,7 @@ namespace dailyTasks
 
             return (col * row);
         }
+        /*
         public static void Main(string[] args)
         {
             //countMax
@@ -69,8 +70,9 @@ namespace dailyTasks
 
             var res = balancedSum(arr);
 
-            Console.WriteLine(balancedSum(arr));*/
+            Console.WriteLine(balancedSum(arr));#1#
         }
+        */
         
 
     }
