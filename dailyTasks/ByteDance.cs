@@ -104,6 +104,6 @@ namespace dailyTasks
 			var t4 =randomizedSet.Remove(1); // Removes 1 from the set, returns true. Set now contains [2].
 			var t5 = randomizedSet.Insert(2); // 2 was already in the set, so return false.
 			var t6 = randomizedSet.GetRandom();
-		}
+		}*/
 	}
 }
